@@ -36,11 +36,10 @@ gh repo create "{{cookiecutter.__package_slug}}" --public --description "{{cooki
 git branch --move --force main
 git remote add origin git@github.com:lukasz-lobocki/"{{cookiecutter.__package_slug}}"
 
-
 echo -e "
 ${RED}>>> ${NC}Adding tag and pushing to GitHub.
 "
-git tag --annotate v{{cookiecutter.package_version}} -m "Init."
+git tag --annotate v{{cookiecutter.package_version}} -m "Initiation."
 git push --set-upstream --tags origin main
 
 echo -e "

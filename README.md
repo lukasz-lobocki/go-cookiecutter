@@ -1,6 +1,4 @@
-# Go-Cookiecutter: A cookiecutter template for Go packages
-
-[![Documentation Status](https://readthedocs.org/projects/py-pkgs-cookiecutter/badge/?version=latest)](https://py-pkgs-cookiecutter.readthedocs.io/en/latest/)
+# go-cookiecutter: template for _Go_
 
 ## Usage
 
