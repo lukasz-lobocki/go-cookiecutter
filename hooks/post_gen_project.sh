@@ -21,8 +21,7 @@ git init
 echo -e "
 ${RED}>>> ${NC}Initiating go mod.
 "
-go mod init main
-
+go mod init github.com/lukasz-lobocki/{{cookiecutter.__package_slug}}
 
 echo -e "
 ${RED}>>> ${NC}Adding and commiting ${GREEN}feat:${NC} all.
