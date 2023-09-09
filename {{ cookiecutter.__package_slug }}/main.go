@@ -1,13 +1,16 @@
 package main
 
-var version string
-var commit string
-var date string
-var builtBy string
-var branch string
-var gitUrl string
-var semVer string
+var (
+	semVer      string
+	commitHash  string
+	gitUrl      string
+	builtBranch string
+	builtDate   string
+	builtBy     string
+)
 
 func main() {
-	println("ver", version, "commit", commit, "date", date, "builtBy", builtBy, "branch", branch, "gitUrl", gitUrl, "semVer", semVer)
+	println("semVer", semVer, "commitHash", commitHash)
+	println("gitUrl", gitUrl, "builtBranch", builtBranch)
+	println("builtDate", builtDate, "builtBy", builtBy)
 }

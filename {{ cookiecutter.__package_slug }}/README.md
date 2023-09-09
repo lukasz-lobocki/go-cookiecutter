@@ -5,7 +5,7 @@
 ## Build
 
 ```bash
-goreleaser build
+goreleaser build --clean
 ```
 
 ## License
