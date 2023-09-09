@@ -46,3 +46,13 @@ echo -e "
 ${RED}>>> ${NC}Checking goreleaser.
 "
 goreleaser check
+
+echo -e "
+${RED}>>> ${NC}Change dir.
+cd ${GREEN}{{cookiecutter.__package_slug}}${NC}
+"
+
+echo -e "
+${RED}>>> ${NC}Build.
+goreleaser ${GREEN}build${NC}
+"

@@ -1,6 +1,12 @@
 # {{ cookiecutter.package_name }}
 
-## Typical build workflow
+## Build
+
+```bash
+goreleaser build --clean
+```
+
+## Typical release workflow
 
 ```bash
 git add --update
