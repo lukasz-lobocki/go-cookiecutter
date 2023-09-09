@@ -13,10 +13,6 @@ NOBOLD=$(tput sgr0)
 UNDERLINE="\e[4m"
 NOUNDERLINE="\e[0m"
 
-echo {{cookiecutter.__package_slug}}
-echo {{cookiecutter.package_short_description}}
-echo {{cookiecutter.package_version}}
-
 echo -e "
 ${RED}>>> ${NC}Initiating git repo.
 "
