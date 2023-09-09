@@ -16,7 +16,7 @@ builds:
       - amd64
       - arm64 
   ldflags:
-      - -s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}} -X main.builtBy=goreleaser -X main.branch={{.Branch}} -X main.gitUrl={{.GitURL}}
+      - -s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}} -X main.builtBy=goreleaser -X main.branch={{.Branch}} -X main.gitUrl={{.GitURL}} -X main.summary={{.Summary}}
 
 archives:
   - format: tar.gz
