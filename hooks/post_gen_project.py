@@ -35,7 +35,7 @@ def replace_placeholder(file_path, placeholder, replacer):
     except Exception as e:
         print(f"\nAn error occurred: {str(e)}")
 
-def pick_random_css_color():
+def pick_random_css_color() -> str:
     css_colors = [
         'black', 'silver', 'gray', 'white', 'maroon', 'red', 'purple', 'fuchsia',
         'green', 'lime', 'olive', 'yellow', 'navy', 'blue', 'teal', 'aqua',
@@ -66,7 +66,7 @@ def pick_random_css_color():
     ]
     return random.choice(css_colors)
 
-def pick_random_diceware_pl():
+def pick_random_diceware_pl() -> str:
     response = requests.get("https://github.com/MaciekTalaska/diceware-pl/raw/master/diceware-pl.txt")
     if response.status_code == 200:
         lines = response.text.split('\n')
