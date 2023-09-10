@@ -1,7 +1,8 @@
 {
   "author_name": "Lukasz Lobocki",
+  "git_username": "{{ cookiecutter.author_name|slugify(separator='-') }}",
   "package_name": "mypkg",
-  "__package_slug": "{{ cookiecutter.package_name|lower|replace(' ', '_')|replace('-', '_') }}",
+  "__package_slug": "{{ cookiecutter.package_name|slugify(separator='_') }}",
   "package_short_description": "A package for doing great things!",
   "package_version": "0.1.0",
   "open_source_license": [

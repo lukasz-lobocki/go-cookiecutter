@@ -6,7 +6,6 @@ IFS=$'\n\t'
 # chmod u+x __self__.sh
 
 GITURL='github.com'
-GITUSER='lukasz-lobocki'
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -24,7 +23,7 @@ git init
 echo -e "
 ${RED}>>> ${NC}Initiating go mod.
 "
-go mod init ${GITURL}/${GITUSER}/{{cookiecutter.__package_slug}}
+go mod init ${GITURL}/{{cookiecutter.git_username}}/{{cookiecutter.__package_slug}}
 
 echo -e "
 ${RED}>>> ${NC}Adding and commiting ${GREEN}feat:${NC} all.
@@ -37,7 +36,7 @@ ${RED}>>> ${NC}Creating remote on ${GITURL}.
 "
 gh repo create "{{cookiecutter.__package_slug}}" --public --description "{{cookiecutter.package_short_description}}"
 git branch --move --force main
-git remote add origin git@${GITURL}:${GITUSER}/"{{cookiecutter.__package_slug}}"
+git remote add origin git@${GITURL}:{{cookiecutter.git_username}}/"{{cookiecutter.__package_slug}}"
 
 echo -e "
 ${RED}>>> ${NC}Adding tag and pushing to ${GITURL}.
