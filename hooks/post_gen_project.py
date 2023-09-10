@@ -72,7 +72,7 @@ def pick_random_diceware_pl():
         lines = response.text.split('\n')
         lines = [line.strip() for line in lines if line.strip()]
     else:
-        print(f"Failed to load content from {url}. Status code: {response.status_code}")
+        print(f"Failed to load content from {response.url}. Status code: {response.status_code}")
         return
         # Return a random line
     return random.choice(lines)
