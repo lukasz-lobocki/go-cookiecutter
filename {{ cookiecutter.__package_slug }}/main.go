@@ -1,16 +1,15 @@
 package main
 
 var (
-	semVer      string
-	commitHash  string
-	gitUrl      string
-	builtBranch string
-	builtDate   string
-	builtBy     string
+	semVer, commitHash  string
+	goOs, goArch        string
+	gitUrl, builtBranch string
+	builtDate, builtBy  string
 )
 
 func main() {
 	println("semVer", semVer, "commitHash", commitHash)
+	println("goOs", goOs, "goArch", goArch)
 	println("gitUrl", gitUrl, "builtBranch", builtBranch)
 	println("builtDate", builtDate, "builtBy", builtBy)
 }

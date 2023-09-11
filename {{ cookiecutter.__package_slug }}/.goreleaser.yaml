@@ -16,8 +16,9 @@ builds:
       - amd64
       - arm64 
     ldflags:
-      - -s -w 
+      - -s -w
       - -X main.semVer={{.Summary}} -X main.commitHash={{.ShortCommit}}
+      - -X main.goOs={{.Os}} -X main.goArch={{.Arch}}
       - -X main.gitUrl={{.GitURL}} -X main.builtBranch={{.Branch}}
       - -X main.builtDate={{.Date}} -X main.builtBy=goreleaser
 

@@ -1,22 +1,29 @@
+.PHONY: snapshot
 .PHONY: build
 .PHONY: release
-.PHONY: snapshot
+.PHONY: patch
 .PHONY: run
 .PHONY: clean
+.PHONY: tidy
 
-build:
-	go mod tidy
+snapshot: tidy
+	goreleaser build --clean --snapshot
+
+build: tidy
 	goreleaser build --clean
 
-release:
-	go mod tidy
+release: tidy
 	git tag "$(shell svu next)"
 	git push --tags
 	goreleaser release --clean
 
-snapshot:
+patch: tidy
+	git tag "$(shell svu next --force-patch-increment)"
+	git push --tags
+	goreleaser release --clean
+
+tidy:
 	go mod tidy
-	goreleaser build --clean --snapshot
 
 run: snapshot
 	go run .
