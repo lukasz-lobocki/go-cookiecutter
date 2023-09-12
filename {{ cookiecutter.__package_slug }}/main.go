@@ -8,8 +8,24 @@ var (
 	builtDate, builtBy     string
 )
 
+var semReleaseVersion string = semVer +
+	func(pre string, txt string) string {
+		if len(txt) > 0 {
+			return pre + txt
+		} else {
+			return ""
+		}
+	}("+", goArch) +
+	func(pre string, txt string) string {
+		if len(txt) > 0 {
+			return pre + txt
+		} else {
+			return ""
+		}
+	}(".", commitHash)
+
 func main() {
-	println("build version:", semVer+"+"+goArch+"."+commitHash)
+	println("release version:", semReleaseVersion)
 	println()
 	println("semVer:", semVer, "commitHash:", commitHash)
 	println("isGitDirty:", isGitDirty, "isSnapshot:", isSnapshot)
