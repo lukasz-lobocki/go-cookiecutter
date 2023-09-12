@@ -14,7 +14,9 @@ builds:
 #      - darwin
     goarch:
       - amd64
-      - arm64 
+      - arm64
+    flags:
+      - -trimpath
     ldflags:
       - -s -w
       - -X main.semVer={{.Summary}} -X main.commitHash={{.ShortCommit}}
