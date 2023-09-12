@@ -22,6 +22,12 @@ builds:
       - -X main.goOs={{.Os}} -X main.goArch={{.Arch}}
       - -X main.gitUrl={{.GitURL}} -X main.builtBranch={{.Branch}}
       - -X main.builtDate={{.Date}} -X main.builtBy=goreleaser
+#      - -X {{.ModulePath}}/cmd.semVer={{.Summary}} -X {{.ModulePath}}/cmd.commitHash={{.ShortCommit}}
+#      - -X {{.ModulePath}}/cmd.isGitDirty={{.IsGitDirty}} -X {{.ModulePath}}/cmd.isSnapshot={{.IsSnapshot}}
+#      - -X {{.ModulePath}}/cmd.goOs={{.Os}} -X {{.ModulePath}}/cmd.goArch={{.Arch}}
+#      - -X {{.ModulePath}}/cmd.gitUrl={{.GitURL}} -X {{.ModulePath}}/cmd.builtBranch={{.Branch}}
+#      - -X {{.ModulePath}}/cmd.builtDate={{.Date}} -X {{.ModulePath}}/cmd.builtBy=goreleaser
+
 
 archives:
   - format: tar.gz
