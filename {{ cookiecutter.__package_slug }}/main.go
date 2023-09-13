@@ -1,11 +1,15 @@
 package main
 
 var (
-	semVer, commitHash     string
-	isGitDirty, isSnapshot string
-	goOs, goArch           string
-	gitUrl, builtBranch    string
-	builtDate              string
+	semVer      string
+	commitHash  string
+	isGitDirty  string
+	isSnapshot  string
+	goOs        string
+	goArch      string
+	gitUrl      string
+	builtBranch string
+	builtDate   string
 )
 
 var semReleaseVersion string = semVer +
@@ -22,14 +26,25 @@ var semReleaseVersion string = semVer +
 		} else {
 			return ""
 		}
+	}(".", builtBranch) +
+	func(pre string, txt string) string {
+		if len(txt) > 0 {
+			return pre + txt
+		} else {
+			return ""
+		}
 	}(".", commitHash)
 
 func main() {
 	println("release version:", semReleaseVersion)
 	println()
-	println("semVer:", semVer, "commitHash:", commitHash)
-	println("isGitDirty:", isGitDirty, "isSnapshot:", isSnapshot)
-	println("goOs:", goOs, "goArch:", goArch)
-	println("gitUrl:", gitUrl, "builtBranch:", builtBranch)
+	println("semVer:", semVer)
+	println("commitHash:", commitHash)
+	println("isGitDirty:", isGitDirty)
+	println("isSnapshot:", isSnapshot)
+	println("goOs:", goOs)
+	println("goArch:", goArch)
+	println("gitUrl:", gitUrl)
+	println("builtBranch:", builtBranch)
 	println("builtDate:", builtDate)
 }

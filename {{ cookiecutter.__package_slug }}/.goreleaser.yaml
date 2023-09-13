@@ -29,6 +29,8 @@ builds:
       - -X main.gitUrl={{.GitURL}}
       - -X main.builtBranch={{.Branch}}
       - -X main.builtDate={{.Date}}
+
+      - -X main.build.goArch={{.Arch}}
       # For cobra-based module
       - -X {{.ModulePath}}/cmd.semVer={{.Summary}}
       - -X {{.ModulePath}}/cmd.commitHash={{.ShortCommit}}

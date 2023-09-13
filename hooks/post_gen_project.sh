@@ -48,6 +48,7 @@ echo -e "
 ${RED}>>> ${NC}Checking goreleaser.
 "
 goreleaser check
+goreleaser healthcheck
 
 echo -e "
 ${RED}>>> ${NC}Change dir.
