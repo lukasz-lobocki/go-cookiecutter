@@ -5,7 +5,7 @@ var (
 	isGitDirty, isSnapshot string
 	goOs, goArch           string
 	gitUrl, builtBranch    string
-	builtDate, builtBy     string
+	builtDate              string
 )
 
 var semReleaseVersion string = semVer +
@@ -31,5 +31,5 @@ func main() {
 	println("isGitDirty:", isGitDirty, "isSnapshot:", isSnapshot)
 	println("goOs:", goOs, "goArch:", goArch)
 	println("gitUrl:", gitUrl, "builtBranch:", builtBranch)
-	println("builtDate:", builtDate, "builtBy:", builtBy)
+	println("builtDate:", builtDate)
 }
