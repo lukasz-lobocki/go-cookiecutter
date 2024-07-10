@@ -40,7 +40,7 @@ package_short_description: `{{ cookiecutter.package_short_description }}`
 - author_name: `{{ cookiecutter.author_name }}`;
 open_source_license: `{{ cookiecutter.open_source_license }}`
 
-- package_slug: `{{ cookiecutter.package_slug }}`
+- __package_slug: `{{ cookiecutter.__package_slug }}`
 
 ### on
 

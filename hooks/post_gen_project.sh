@@ -23,7 +23,7 @@ git init
 echo -e "
 ${RED}>>> ${NC}Initiating go mod.
 "
-go mod init ${GITURL}/{{cookiecutter.git_username}}/{{cookiecutter.package_slug}}
+go mod init ${GITURL}/{{cookiecutter.git_username}}/{{cookiecutter.__package_slug}}
 
 echo -e "
 ${RED}>>> ${NC}Adding and commiting ${GREEN}feat:${NC} all.
@@ -34,9 +34,9 @@ git commit -m "feat: Repo initiation."
 echo -e "
 ${RED}>>> ${NC}Creating remote on ${GITURL}.
 "
-gh repo create "{{cookiecutter.package_slug}}" --public --description "{{cookiecutter.package_short_description}}"
+gh repo create "{{cookiecutter.__package_slug}}" --public --description "{{cookiecutter.package_short_description}}"
 git branch --move --force main
-git remote add origin git@${GITURL}:{{cookiecutter.git_username}}/"{{cookiecutter.package_slug}}"
+git remote add origin git@${GITURL}:{{cookiecutter.git_username}}/"{{cookiecutter.__package_slug}}"
 
 echo -e "
 ${RED}>>> ${NC}Adding tag and pushing to ${GITURL}.
@@ -52,7 +52,7 @@ goreleaser healthcheck
 
 echo -e "
 ${RED}>>> ${NC}Change dir.
-cd ${GREEN}{{cookiecutter.package_slug}}${NC}
+cd ${GREEN}{{cookiecutter.__package_slug}}${NC}
 "
 
 echo -e "
