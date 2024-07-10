@@ -2,8 +2,10 @@
 
 ## Build
 
+To build the solution with dirty repository, use the following command with `--snapshot` parameter.
+
 ```bash
-goreleaser build --clean
+goreleaser build --clean --snapshot
 ```
 
 ## Typical release workflow
