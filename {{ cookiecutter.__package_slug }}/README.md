@@ -4,9 +4,7 @@
 
 ## Build
 
-```bash
-goreleaser build --clean
-```
+See [BUILD.md](BUILD.md) file.
 
 ## License
 
