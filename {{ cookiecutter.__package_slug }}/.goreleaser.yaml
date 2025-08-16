@@ -1,3 +1,8 @@
+version: 2
+
+env_files:
+  github_token: ~/github_token
+
 before:
   hooks:
     # You may remove this if you don't use go modules.
@@ -10,8 +15,8 @@ builds:
       - CGO_ENABLED=0
     goos:
       - linux
-#      - windows
-#      - darwin
+    #      - windows
+    #      - darwin
     goarch:
       - amd64
       - arm64
@@ -42,7 +47,7 @@ builds:
       - -X {{.ModulePath}}/cmd.builtDate={{.Date}}
 
 archives:
-  - format: tar.gz
+  - formats: ["tar.gz"]
     # this name template makes the OS and Arch compatible with the results of uname.
     name_template: >-
       {{ .ProjectName }}_
@@ -53,14 +58,14 @@ archives:
       {{- if .Arm }}v{{ .Arm }}{{ end }}
     # use zip for windows archives
     format_overrides:
-    - goos: windows
-      format: zip
+      - goos: windows
+        formats: ["zip"]
 
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
 
 snapshot:
-  name_template: "{{ incpatch .Version }}-dirty"
+  version_template: "{{ incpatch .Version }}-dirty"
 
 changelog:
   groups:
@@ -75,11 +80,10 @@ changelog:
   sort: asc
   filters:
     exclude:
-      - '^chore:'
+      - "^chore:"
 
 announce:
   skip: true
-
 # The lines beneath this are called `modelines`. See `:help modeline`
 # Feel free to remove those if you don't want/use them.
 # yaml-language-server: $schema=https://goreleaser.com/static/schema.json

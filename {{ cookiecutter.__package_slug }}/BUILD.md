@@ -1,6 +1,6 @@
 # {{ cookiecutter.package_name }}
 
-## Build
+## Build a snapshot
 
 To build the solution with dirty repository, use the following command with `--snapshot` parameter.
 
@@ -19,7 +19,7 @@ git commit -m "fix: Change."
 ```
 
 ```bash
-git tag "$(svu next --force-patch-increment)"
+git tag "$(svu next --always)"
 git push --tags
 goreleaser release --clean
 ```
