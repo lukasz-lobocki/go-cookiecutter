@@ -20,6 +20,13 @@ builds:
     goarch:
       - amd64
       - arm64
+    goamd64:
+      - v3
+    goarm:
+      - v8
+    ignore:
+      - goos: windows
+        goarch: arm64
     flags:
       - -trimpath
     ldflags:
